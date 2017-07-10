@@ -5,7 +5,7 @@ var articles = {
     'Tech': [
         {
             text: 'Today I am thrilled to announce the first public preview of Vue.js 2.0, which brings along many exciting improvements and new features.',
-            interested: 'View the Vue',
+            interested: 'A New Vue',
             link: {
                 href: 'https://vuejs.org/2016/04/27/announcing-2.0/'
             },
@@ -19,7 +19,7 @@ var articles = {
         },
         {
             text: 'Paid plans on social-coding site GitHub now include unlimited private repositories as part of the deal. ',
-            interested: 'Get Git',
+            interested: 'I Get Git',
             link: {
                 href: 'http://www.infoworld.com/article/3069275/application-development/github-ushers-in-unlimited-private-repositories.html'
             },
@@ -49,7 +49,7 @@ var articles = {
         },
         {
             text: 'Monster Hunter: World Looks Like An Amazing Game That Has No Idea What The Series Is All About',
-            interested: 'Remember to bring whetstones',
+            interested: 'Bring whetstones',
             link: {
                 href: 'https://www.forbes.com/sites/olliebarder/2017/07/08/monster-hunter-world-looks-like-an-amazing-game-that-has-no-idea-what-the-series-is-all-about/#532e73851077'
             },
@@ -99,13 +99,13 @@ var mainNews = new Vue({
             }
             setTimeout(function () {
                 mainNews.isPrompt = true;
-            }, this.introduction.length * 2000);
+            }, this.introduction.length * 2500);
         },
         // Timeouts are used to add messages to simulate another user entering messages
         callMessageTimeout: function (i, message) {
             setTimeout(function() {
                 mainNews.addNewMessage(message);
-            }, i * 2000);
+            }, i * 2500);
         },
         // These 3 get functions simulate calls to the backend for data
         getIntroduction: function () {
@@ -156,10 +156,10 @@ var mainNews = new Vue({
         confirmPrompt: function (prompt) {
             this.isPrompt = false;
 
-            this.callMessageTimeout(1, prompt);
+            this.callMessageTimeout(1, Object.assign({}, prompt));
             setTimeout(function() {
                 mainNews.nextArticle();
-            }, 2000);
+            }, 1500);
         },
         confirmQuestion: function (answer) {
             this.isQuestion = false;
@@ -168,24 +168,25 @@ var mainNews = new Vue({
                 this.callMessageTimeout(1, Object.assign({}, this.interested));
                 setTimeout(function() {
                     mainNews.nextArticle();
-                }, 2500);
+                }, 1500);
             } else {
                 this.callMessageTimeout(1, Object.assign({}, this.notInterested));
                 setTimeout(function() {
                     mainNews.nextCategory();
-                }, 2500);
+                }, 1500);
             }
         }
     },
     // When the Vue component is created, the introduction messages are retrieved and displayed
     created: function () {
         this.introduction = this.getIntroduction();
-        this.giveIntroduction();
         this.categories = this.getCategories();
         this.articleQueue = this.getArticles(this.categories[this.categoriesIndex]);
+
+        this.giveIntroduction();
     },
     // When a new message is displayed, window is scrolled to the newest message
     updated: function () {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0, document.body.scrollHeight);
     }
 });

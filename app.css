@@ -1,18 +1,18 @@
 /* General CSS Setup */
 
 @font-face {
-  font-family: 'hamurzregular';
-  src: url('hamurz.eot');
-  src: url('hamurz.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'hamurzregular';
+    src: url('hamurz.eot');
+    src: url('hamurz.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Comfortaa-Regular';
-  src: url('Comfortaa-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Comfortaa-Regular';
+    src: url('Comfortaa-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
@@ -46,7 +46,7 @@ img {
 }
 
 #main-news {
-    min-height: 90vh;
+    min-height: 85vh;
 }
 
 /* CSS talk bubble */
@@ -69,12 +69,21 @@ img {
 }
 .user-message {
     background-color: #FFCA57;
+    box-shadow: -2px 2px 2px #888888;
 }
 .prompt {
-    background-color: #FFF4DD;
     cursor: pointer;
     font-size: 1.4em;
     width: auto;
+    transition: all .2s ease-in-out;
+}
+.prompt i {
+    background-color: #FFCA57;
+    font-size: 1.2em;
+    padding: 15px;
+}
+.prompt:hover {
+    transform: scale(1.1);
 }
 
 /* Right triangle placed top left flush. */
@@ -287,30 +296,39 @@ img {
     text-align: left;
     line-height: 1.5em;
 }
-.talktext p {
-    margin-top: 16px;
-    /* remove webkit p margins */
-    -webkit-margin-before: 0em;
-    -webkit-margin-after: 0em;
-}
-.talktext a {
+.talktext p, .talktext a {
     color: inherit;
-    margin-top: 16px;
     /* remove webkit p margins */
     -webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
+/* Enter and leave animations for prompts */
+.slide-fade-up-enter-active {
+    transition: all .3s ease;
+}
+.slide-fade-up-leave-active {
+    transition: all .5s ease-out;
+}
+.slide-fade-up-enter {
+    transform: translateY(-10px);
+    opacity: 0;
+}
+.slide-fade-up-leave-to {
+    opacity: 0;
+}
+
+/* Enter and leave animations for messages */
 .slide-fade-enter-active {
-  transition: all .3s ease;
+  transition: all .5s ease;
 }
 .slide-fade-leave-active {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active for <2.1.8 */ {
-  transform: translateX(10px);
+  transform: translatex(15px);
   opacity: 0;
 }
