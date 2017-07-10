@@ -17,6 +17,11 @@
         "sizes": "256x256"
       },
       {
+        "src": "html-coding-144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
         "src": "html-coding-128.png",
         "type": "image/png",
         "sizes": "128x128"
