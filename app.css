@@ -31,6 +31,11 @@ img {
     height: 200px;
 }
 
+p {
+    /* Remove default margins */
+    margin-bottom: 0px;
+}
+
 .image-bubble {
     min-height: 240px;
 }
@@ -53,7 +58,6 @@ img {
     width: auto;
     height: auto;
     background-color: #FFF4DD;
-    margin: 5px 20px;
     box-shadow: 2px 2px 2px #96BBBB;
 }
 .border {

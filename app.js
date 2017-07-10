@@ -87,7 +87,7 @@ var mainNews = new Vue({
         articleQueueIndex: 0,
         interested: {text: '', author: 'me', article: false, userMessage: true},
         notInterested: {text: 'Anything else?', author: 'me', article: false, userMessage: true},
-        prompt: {text: 'Got it.', author: 'me', article: false, userMessage: true},
+        prompt: {text: 'Got it', author: 'me', article: false, userMessage: true},
         isQuestion: false,
         isPrompt: false
     },
