@@ -5,7 +5,7 @@ var articles = {
     'Tech': [
         {
             text: 'Today I am thrilled to announce the first public preview of Vue.js 2.0, which brings along many exciting improvements and new features.',
-            interested: 'A New Vue',
+            interested: 'A New Vue For You',
             link: {
                 href: 'https://vuejs.org/2016/04/27/announcing-2.0/'
             },
