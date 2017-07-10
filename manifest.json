@@ -1,8 +1,35 @@
 {
   "short_name": "Rock Crystal",
-  "name": "Rock Crystal - The Off-brand News Chat",
+  "name": "Rock Crystal",
   "theme_color": "#FFCA57",
   "background_color": "#BFEDED",
   "start_url": "/?utm_source=homescreen",
-  "display": "standalone"
+  "display": "standalone",
+  "icons": [
+      {
+        "src": "html-coding-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "html-coding-256.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      },
+      {
+        "src": "html-coding-128.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      },
+      {
+        "src": "html-coding-64.png",
+        "type": "image/png",
+        "sizes": "64x64"
+      },
+      {
+        "src": "html-coding-32.png",
+        "type": "image/png",
+        "sizes": "32x32"
+      }
+    ]
 }

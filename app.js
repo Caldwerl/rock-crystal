@@ -69,7 +69,7 @@ var categories = Object.getOwnPropertyNames(articles);
 var introduction = [
     {text: 'Hey there!', author: 'RC', article: false, userMessage: false},
     {text: 'Welcome to Rock Crystal.', author: 'RC', article: false, userMessage: false},
-    {text: 'We\'re definitely unrelated to any other apps named after minerals...', author: 'RC', article: false, userMessage: false},
+    {text: 'We send you articles based in categories.', author: 'RC', article: false, userMessage: false},
     {text: 'Anyways... on to the news!', author: 'RC', article: false, userMessage: false},
     {text: 'First up is ' + Object.getOwnPropertyNames(articles)[0], author: 'RC', article: false, userMessage: false}
 ];
