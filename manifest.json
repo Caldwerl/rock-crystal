@@ -1,0 +1,8 @@
+{
+  "short_name": "Rock Crystal",
+  "name": "Rock Crystal - The Off-brand News Chat",
+  "theme_color": "#FFCA57",
+  "background_color": "#BFEDED",
+  "start_url": "/?utm_source=homescreen",
+  "display": "standalone"
+}
