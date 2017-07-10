@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rock Crystal - Off-brand News Chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="app.css">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <h2 class="navbar-text">Rock Crystal</h2>
+                <h5 class="hidden-sm-down">Off-brand News Chat</h5>
+            </div>
+        </nav>
+
+
+        <div id="main-news" class="container">
+
+            <transition name="slide-fade" v-for="message in chatlog">
+                <div  v-if="message.article">
+                    <div class="row justify-content-start">
+                        <div class="talk-bubble round tri-right left-in col-xs-6">
+                            <div class="talktext">
+                                <p><a :href="message.link.href" target="_blank">{{ message.text }}</a><p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-start">
+                        <blockquote>
+                            <a :href="message.link.href" target="_blank">{{ message.author }}</a>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div  v-else-if="message.userMessage">
+                    <div class="row justify-content-end">
+                        <div class="talk-bubble round tri-right right-in col-xs-6">
+                            <div class="talktext">
+                                <p>{{ message.text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <blockquote>
+                            <small>{{ message.author }}</small>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div  v-else>
+                    <div class="row justify-content-start">
+                        <div class="talk-bubble round tri-right left-in col-xs-6">
+                            <div class="talktext">
+                                <p>{{ message.text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-start">
+                        <blockquote>
+                            <small>{{ message.author }}</small>
+                        </blockquote>
+                    </div>
+                </div>
+            </transition>
+
+            <div class="row align-items-end justify-content-around" v-if="isQuestion">
+                <div class="talk-bubble border round prompt col-4 col-xs-5" v-on:click="confirmQuestion('interested')">
+                    <div class="talktext">
+                        <p class="text-center"><strong>{{ interested.text }}</strong></p>
+                    </div>
+                </div>
+                <div class="talk-bubble border round prompt col-4 col-xs-5" v-on:click="confirmQuestion('notInterested')">
+                    <div class="talktext">
+                        <p class="text-center"><strong>{{ notInterested.text }}</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-end justify-content-center" v-else-if="isPrompt">
+                <div class="talk-bubble border round prompt col-4 col-xs-6" v-on:click="confirmPrompt(prompt)">
+                    <div class="talktext">
+                        <p class="text-center"><strong>{{ prompt.text }}</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
