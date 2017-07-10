@@ -9,6 +9,10 @@ var articles = {
             link: {
                 href: 'https://vuejs.org/2016/04/27/announcing-2.0/'
             },
+            image: {
+                src: 'http://www.tutorialsavvy.com/wp-content/uploads/2015/10/image23.png',
+                alt: 'Vue.js'
+            },
             author: 'vuejs.org',
             article: true,
             userMessage: false
@@ -18,6 +22,10 @@ var articles = {
             interested: 'Get Git',
             link: {
                 href: 'http://www.infoworld.com/article/3069275/application-development/github-ushers-in-unlimited-private-repositories.html'
+            },
+            image: {
+                src: 'http://egyptiankarim.com/icons/github/github-512-black.png',
+                alt: 'Github'
             },
             author: 'infoworld.com',
             article: true,
@@ -31,6 +39,10 @@ var articles = {
             link: {
                 href: 'http://www.empireonline.com/movies/dredd/live-action-judge-dredd-tv-series-works/'
             },
+            image: {
+                src: 'http://images.mentalfloss.com/sites/default/files/styles/article_main_image/public/judge-dredd-header.png',
+                alt: 'Judge Dredd'
+            },
             author: 'empireonline.com',
             article: true,
             userMessage: false
@@ -40,6 +52,10 @@ var articles = {
             interested: 'Remember to bring whetstones',
             link: {
                 href: 'https://www.forbes.com/sites/olliebarder/2017/07/08/monster-hunter-world-looks-like-an-amazing-game-that-has-no-idea-what-the-series-is-all-about/#532e73851077'
+            },
+            image: {
+                src: 'https://pbs.twimg.com/media/DCKgqJPV0AAgCjc.jpg',
+                alt: 'Monster Hunter: World'
             },
             author: 'forbes.com',
             article: true,
@@ -143,7 +159,7 @@ var mainNews = new Vue({
             this.callMessageTimeout(1, prompt);
             setTimeout(function() {
                 mainNews.nextArticle();
-            }, 4000);
+            }, 2000);
         },
         confirmQuestion: function (answer) {
             this.isQuestion = false;
@@ -152,12 +168,12 @@ var mainNews = new Vue({
                 this.callMessageTimeout(1, Object.assign({}, this.interested));
                 setTimeout(function() {
                     mainNews.nextArticle();
-                }, 4000);
+                }, 2500);
             } else {
                 this.callMessageTimeout(1, Object.assign({}, this.notInterested));
                 setTimeout(function() {
                     mainNews.nextCategory();
-                }, 4000);
+                }, 2500);
             }
         }
     },
