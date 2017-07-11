@@ -3,7 +3,7 @@
   "name": "Rock Crystal",
   "theme_color": "#FFCA57",
   "background_color": "#BFEDED",
-  "start_url": "/?utm_source=homescreen",
+  "start_url": "/",
   "display": "standalone",
   "icons": [
       {
