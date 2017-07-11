@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Hamurz-Regular';
+    src: url('./hamurz.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comfortaa-Regular';
+    src: url('./Comfortaa-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
