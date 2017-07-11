@@ -1,20 +1,5 @@
 /* General CSS Setup */
 
-@font-face {
-    font-family: 'hamurzregular';
-    src: url('hamurz.eot');
-    src: url('hamurz.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Comfortaa-Regular';
-    src: url('Comfortaa-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
     background-color: #BFEDED;
     font-family: 'Comfortaa-Regular', "Lucida Sans", helvetica, sans;
@@ -41,7 +26,7 @@ p {
 }
 
 .navbar-fixed-top {
-    font-family: 'hamurzregular';
+    font-family: 'Hamurz-Regular';
     top: 0;
     position: fixed;
     right: 0;
